@@ -1,0 +1,24 @@
+<html>
+
+<body>
+
+    <p>Multiply every element in the array with 10</p>
+
+    <p id="product"></p>
+
+
+    <script>
+        var numbers=[20,9,11,19,45,79];
+        function myfunction(num){
+            return num *10;
+
+
+    
+        }
+        var newArray=numbers.map(myfunction);
+        document.getElementById("product").innerHTML =newArray
+    </script>
+
+</body>
+
+</html>
