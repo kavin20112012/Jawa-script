@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+    <h2>Javarscipt Callbacks</h2>
+
+    <p>Do a calculation and then display the result</p>
+
+    <p id="result"></p>
+
+
+    <script>
+        function myDisplayer(value){
+            document.getElementById("result").innerHTML=value
+
+        }
+        function myCalculator (num1,num2,Callback){
+            let sum=num1+num2;
+            Callback(sum);
+        }
+        myCalculator(5,5,myDisplayer);
+
+
+    </script>
+
+</body>
+
+</html>
