@@ -1,0 +1,39 @@
+<html>
+
+<body>
+
+    <h2>Javarscipt Promises</h2>
+
+    <p id="demo"></p>
+
+
+    <script>
+        function myDisplayer(some){
+            document.getElementById("demo").innerHTML= some;
+
+        }
+        function  sum(a,b){
+            var sum=a+b;
+            myDisplayer(sum)
+        }
+        let myPromise= new Promise(function(myResolve,myReject){
+            let x=0;
+            if(x==0){
+                myResolve("OK");
+            }else{
+                myReject("ERROR")
+
+            }
+        });
+        myPromise.then(
+            function(value){ sum(3,6);},
+            function(error){sum(error)}
+        )
+
+
+
+    </script>
+
+</body>
+
+</html>
