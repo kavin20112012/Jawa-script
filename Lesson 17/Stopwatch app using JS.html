@@ -11,56 +11,89 @@
                             <button id="button-reset">reset</button>
                        </div>
                     <script>
-                        window.onload=function(){
-                            var seconds="00";
-                            var milliseconds="00";
-                            var appendmillisecond=document.getElementById("milliseconds");
-                            var appendseconds=document.getElementById("seconds");
-                            var buttonstart=document.getElementById("button-start");
+                    window.onload = function () {
+
+                            var seconds = "00";
+
+                            var milliseconds = "00";
+
+                            var appendmillisecond = document.getElementById("milliseconds");
+
+                            var appendseconds = document.getElementById("seconds");
+
+                            var buttonstart = document.getElementById("button-start");
+
                             var buttonstop = document.getElementById("button-stop");
+
                             var buttonreset = document.getElementById("button-reset");
+
                             var Interval;
 
-                            buttonstart.onclick=function(){
-                                    clearInterval(Interval);
-                                    Interval=setInterval(startTimer,10);
-                            }
-                            buttonstop.onclick=function(){
-                                clearInterval(Interval)
-                            }
-                            buttonreset.onclick=function(){
+                            buttonstart.onclick = function () {
+
                                 clearInterval(Interval);
-                                millisecond="00";
-                                seconds="00";
-                                appendmillisecond=milliseconds;
-                                appendseconds=seconds;
+
+                                Interval = setInterval(startTimer, 10);
 
                             }
-                            function startTimer(){
+
+                            buttonstop.onclick = function () {
+
+                                clearInterval(Interval)
+
+                            }
+
+                            buttonreset.onclick = function () {
+
+                                clearInterval(Interval);
+
+                                milliseconds = "00";
+
+                                seconds = "00";
+
+                                appendmillisecond.innerHTML = milliseconds;
+
+                                appendseconds.innerHTML = seconds;
+
+                            }
+
+                            function startTimer() {
+
                                 milliseconds++;
-                                if(milliseconds<=9){
-                                    appendmillisecond.innerHTML="0"+milliseconds;
+
+                                if (milliseconds <= 9) {
+
+                                    appendmillisecond.innerHTML = "0" + milliseconds;
 
                                 }
-                                if(milliseconds>9){
-                                   appendmillisecond.innerHTML =milliseconds;
+
+                                if (milliseconds > 9) {
+
+                                    appendmillisecond.innerHTML = milliseconds;
+
                                 }
-                                if(millisseconds> 99){
+
+                                if (milliseconds > 99) {
+
                                     seconds++;
+
                                     appendseconds.innerHTML = "0" + seconds;
-                                    milliseconds =0;
-                                    appendmillisecond.innerHTML = "0" +0;
+
+                                    milliseconds = 0;
+
+                                    appendmillisecond.innerHTML = "0" + 0;
+
+                                }
+
+                                if (seconds > 9) {
+
+                                    appendseconds.innerHTML = seconds;
+
+                                }
 
                             }
-                            if(seconds>9){
-                                appendseconds.innerHTML =seconds;
-                                
-                            }
 
-                            }
-                        }
-
-
+}
                         
                         </script>
         </body>
